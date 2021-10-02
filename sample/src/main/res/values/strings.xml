@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">M24LRNfcLibSample</string>
+    <string name="app_name">MLR24NfcLibSample</string>
     <string name="message_success">Success</string>
     <string name="read_single_block_success">Block Number:  %1$s Hexadecimal data: %2$s</string>
 </resources>

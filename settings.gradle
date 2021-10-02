@@ -8,4 +8,4 @@ dependencyResolutionManagement {
 }
 rootProject.name = "NfcLib"
 include ':sample'
-include ':M24LRNfcLib'
+include ':MLR24NfcLib'
