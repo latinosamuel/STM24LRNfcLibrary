@@ -7,16 +7,16 @@ import android.widget.Button
 import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.Toast
-import com.latinosamuel.nfclib.mlr24.MLR24Init
-import com.latinosamuel.nfclib.mlr24.enumerators.InterruptReason
+import com.latinosamuel.nfclib.m24lr.M24LRInit
+import com.latinosamuel.nfclib.m24lr.enumerators.InterruptReason
 import java.util.*
 import kotlin.collections.HashMap
-import  com.latinosamuel.nfclib.mlr24.enumerators.Process
-import com.latinosamuel.nfclib.mlr24.enumerators.TerminationReason
-import com.latinosamuel.nfclib.mlr24.interfaces.CompletedListener
-import com.latinosamuel.nfclib.mlr24.interfaces.ErrorListener
-import com.latinosamuel.nfclib.mlr24.interfaces.ITagListener
-import com.latinosamuel.nfclib.mlr24.utils.NfcUtils
+import  com.latinosamuel.nfclib.m24lr.enumerators.Process
+import com.latinosamuel.nfclib.m24lr.enumerators.TerminationReason
+import com.latinosamuel.nfclib.m24lr.interfaces.CompletedListener
+import com.latinosamuel.nfclib.m24lr.interfaces.ErrorListener
+import com.latinosamuel.nfclib.m24lr.interfaces.ITagListener
+import com.latinosamuel.nfclib.m24lr.utils.NfcUtils
 
 class MainActivity : AppCompatActivity() {
 
@@ -36,7 +36,7 @@ class MainActivity : AppCompatActivity() {
 
             // Block number to read
             val blockNumber = 0
-            MLR24Init().init(this@MainActivity, Process.READ_SINGLE_BLOCK, blockNumber)
+            M24LRInit().init(this@MainActivity, Process.READ_SINGLE_BLOCK, blockNumber)
                 .completedListener(object : CompletedListener {
                     override fun onProcessCompletedReadSingleBlock(blockNumber: Int, hexData: String) {
                         runOnUiThread {
@@ -84,7 +84,7 @@ class MainActivity : AppCompatActivity() {
             //Data to write in the respective block in hexadecimal
             val data = "01506201"
 
-            MLR24Init().init(this@MainActivity, Process.WRITE_SINGLE_BLOCK, blockNumber, data)
+            M24LRInit().init(this@MainActivity, Process.WRITE_SINGLE_BLOCK, blockNumber, data)
                 .completedListener(object : CompletedListener{
                     override fun onProcessCompletedWriteSingleBlock() {
                         runOnUiThread {
@@ -128,7 +128,7 @@ class MainActivity : AppCompatActivity() {
         val blockNumberList = arrayListOf(0,1,2,3,4)
 
         readMultipleBlocksBtn.setOnClickListener {
-            MLR24Init().init(this@MainActivity, Process.READ_MULTIPLE_BLOCK, blockNumberList)
+            M24LRInit().init(this@MainActivity, Process.READ_MULTIPLE_BLOCK, blockNumberList)
                 .completedListener(object : CompletedListener{
                     override fun onProcessCompletedReadMultipleBlock(response: HashMap<Int, String>) {
                         runOnUiThread {
@@ -177,7 +177,7 @@ class MainActivity : AppCompatActivity() {
             map[3]= "FFFFFFFF"
             map[4]= "FFF00003"
 
-            MLR24Init().init(this@MainActivity, Process.WRITE_MULTIPLE_BLOCK, map)
+            M24LRInit().init(this@MainActivity, Process.WRITE_MULTIPLE_BLOCK, map)
                 .completedListener(object : CompletedListener{
                     override fun onProcessCompletedWriteMultipleBlock() {
                         runOnUiThread {
@@ -217,7 +217,7 @@ class MainActivity : AppCompatActivity() {
         /** Cancel Process **/
         val cancelProcessBtn = findViewById<Button>(R.id.cancelProcessBtn)
         cancelProcessBtn.setOnClickListener {
-            MLR24Init().cancelProcess(this@MainActivity)
+            M24LRInit().cancelProcess(this@MainActivity)
         }
     }
 
