@@ -1,10 +1,10 @@
 <h1 align="center"> ST M24LR Nfc Library</h1>
 </br>
 <p align="center"> 
-  <img src="https://www.st.com/bin/ecommerce/api/image.PF251919.en.feature-description-include-personalized-no-cpn-medium.jpg" alt="HAR Logo" width="450px" height="300px">
+  <img src="https://estore.st.com/media/catalog/product/t/s/tssop-8_5.jpg?quality=80&bg-color=255,255,255&fit=bounds&height=700&width=700&canvas=700:700" alt="HAR Logo" width="300px" height="300px">
 </p>
 
- ![API](https://img.shields.io/badge/API-24%2B-brightgreen.svg?style=flat) ![JITPACK](https://jitpack.io/v/latinosamuel/STM24LRNfcLibrary.svg) ![Language](https://img.shields.io/github/languages/top/cortinico/kotlin-android-template?color=blue&logo=kotlin)
+ ![API](https://img.shields.io/badge/API-24%2B-brightgreen.svg?style=flat) ![JITPACK](https://jitpack.io/v/latinosamuel/stm24lrnfclibrary.svg) ![Language](https://img.shields.io/github/languages/top/cortinico/kotlin-android-template?color=blue&logo=kotlin)
 
 <!-- TABLE OF CONTENTS -->
 <h2 id="table_of_contents"> :book: Table of Contents</h2>
